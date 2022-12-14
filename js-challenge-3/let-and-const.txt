@@ -1,0 +1,17 @@
+ambas sirven para declarar variables
+
+var tiene un scope global o de función, cuando se declara en una función
+está disponible dentro de esa función y si se define fuera de una función
+está disponible globalmente.
+let tiene scope de bloque (trozo de código delimitado por llaves). Gracias
+a esto se podría declarar la misma variable con diferentes valores, pero 
+en bloques diferentes.
+
+
+var puede volver a modificarse y declararse
+let puede modificarse pero no vovler a declararse
+
+var se inicializa como undefined, si se intenta usar una variable antes de 
+declararla devuelve undefined.
+let no se inicializa, si se intenta usar una variable let antes de declararla
+devuelve Reference Error.
