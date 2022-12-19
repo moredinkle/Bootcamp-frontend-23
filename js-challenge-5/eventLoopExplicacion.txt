@@ -1,0 +1,7 @@
+queueMicroTask añade algo a la cola de micro tasks
+
+primero añade intervalCallback, promiseCallback y el ultimo intervalCallback
+se ejecuta promiseCallback
+luego va a intervalCallback, ejecuta addToQueue y añade el primer queueMicroTask a la cola
+luego añade promiseCallback y ejecuta el primer queueMicroTask añadiendo el segundo a la cola
+se ejecutan las microtasks disponibles antes de ejecutar el ultimo intervalCallback
