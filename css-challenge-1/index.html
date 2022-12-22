@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My HTML Document</title>
+    <style>
+      #card {
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+      }
+
+      #cardHeader {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #cardTitle {
+        justify-content: flex-start;
+      }
+
+      #cardStars {
+        align-self: flex-end;
+      }
+
+      #cardImage {
+        display: flex;
+        justify-content: center;
+      }
+
+
+      #cardInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(135, 137, 108, 0.301);
+        border: 1 rem;
+        border-style: solid;
+        border-color: black;
+        padding: 1rem;
+      }
+
+      #cardType {
+        display: flex;
+        justify-content: start;
+        font-weight: bold;
+      }
+
+      #cardDescription {
+        justify-content: start;
+      }
+
+      #cardNumbers {
+      }
+
+      #footer {
+        border: 1 rem;
+        border-style: solid;
+        border-color: black;
+        align-self: flex-end;
+      }
+
+    </style>
+  </head>
+
+    <div id="card">
+        <div id="cardHeader">
+            <h1 id="cardTitle">Nombre monstruo</h1>
+            <h2 id="cardStars">o o o o o o</h2>
+        </div>
+      <img
+        id="cardImage"
+        src="https://e7.pngegg.com/pngimages/279/850/png-clipart-yugi-mutou-humanoid-yu-gi-oh-creature-dragon-fictional-character.png"
+      />
+      <div id="cardInfo">
+        <p id="cardType">something</p>
+        <p id="cardDescription">texto texto texto</p>
+        <div id="footer">
+            <p id="cardNumbers">ATK/1000 DEF/1000</p>
+
+        </div>
+      </div>
+    </div>
+</html>
