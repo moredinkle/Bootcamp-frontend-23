@@ -1,4 +1,5 @@
 .cardsBox {
+  box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -25,8 +26,9 @@
     padding-inline: 5px;
 }
 
+
 .titleSymbol {
-    max-height: 30px;
+    max-width: 20px;
 }
 
 
@@ -37,14 +39,15 @@
 
 .star{
     border-radius: 50%;
-    max-height: 20px;
-    margin:5px;
+    max-width: 20px;
+    margin:3px;
 }
 
 .cardImage {
   display: flex;
   justify-content: center;
-  max-height: 300px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .cardInfo {
