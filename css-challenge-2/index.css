@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
   grid-template-rows: auto;
-  max-width: 600px;
+  max-width: 750px;
   gap: 10px 10px;
 }
 
@@ -25,25 +25,23 @@
 }
 
 .main-board{
-  display: flex;
+  display: inherit;
   align-content: space-around;
-  justify-content: center;
 }
 
 .deck {
-  display: grid;
-  border: solid 1px;
+  display: inherit;
+  align-items: center;
+  justify-items: stretch;
   padding: 2px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 3px 7px;
+  gap: 4px 8px;
 }
-
-
 
 .card {
   border: solid 2px;
   min-height: 70px;
+  max-width: 50px;
   background-color: rgb(27, 27, 103);
 }
 
@@ -54,7 +52,7 @@
 
 .symbol-card {
   display: flex;
-  padding: 2px;
+  padding: 1px;
   border: solid 1px;
   align-content: center;
   justify-content: center;
