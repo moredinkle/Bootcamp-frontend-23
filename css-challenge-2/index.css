@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
   grid-template-rows: auto;
-  max-width: 750px;
+  max-height: 700px;
   gap: 10px 10px;
 }
 
@@ -38,12 +38,12 @@
   gap: 4px 8px;
 }
 
-.card {
+/* .card {
   border: solid 2px;
   min-height: 70px;
   max-width: 50px;
   background-color: rgb(27, 27, 103);
-}
+} */
 
 .card-image {
   /* max-width: 50px; */

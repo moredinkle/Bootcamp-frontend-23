@@ -1,0 +1,64 @@
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 5px 0px;
+    background-color: rgb(221, 177, 64);
+    border: solid 1px;
+    margin: 1em;
+    padding: 1em;
+  }
+  
+  .cardTitle{
+      display: flex;
+      justify-content: stretch;
+      align-items: center;
+      border: solid 1px;
+      padding-inline: 5px;
+  }
+  
+  
+  .titleSymbol {
+      max-width: 20px;
+  }
+  
+  
+  .cardStars {
+      display: flex;
+      justify-content: flex-end;
+  }
+  
+  .star{
+      border-radius: 50%;
+      max-width: 20px;
+      margin:3px;
+  }
+  
+  .cardImage {
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .cardInfo {
+    background-color: rgb(220, 187, 105);
+    padding-inline: 1em;
+    border-style: solid;
+    border-color: rgb(135, 104, 26);
+  }
+  
+  .cardType {
+    font-weight: bold;
+  }
+  
+  .cardNumbers {
+      display: flex;
+      border-top: solid 3px;
+      flex-direction: row;
+      justify-content: flex-end;
+  }
+  
+  .cardNumbers p {
+      margin-left: 10px;
+  }

@@ -51,7 +51,7 @@ function displayStars(numberOfStars){
 }
 
 
-function displayCard(cardData) {
+function addCard(cardData) {
   const { title, stars, src, description, atk, def } = cardData;
   const starsHTML = displayStars(stars);
   const card = `
@@ -77,10 +77,16 @@ function displayCard(cardData) {
 
 
 function loadCards(){
-  const cards = data.map(it => displayCard(it));
+  const cards = [];
+  for (let i = 0; i < 10; i++) {
+    const card = data[i % data.length];
+    cards.push(addCard(card));
+  }
   const cardsHTML = cards.join('');
-  const box = document.querySelector('.cardsBox');
-  box.insertAdjacentHTML('beforeend', cardsHTML);
+  const d1 = document.getElementById('d1');
+  d1.insertAdjacentHTML('beforeend', cardsHTML);
+  const d2 = document.getElementById('d2');
+  d2.insertAdjacentHTML('beforeend', cardsHTML);
 }
 
 loadCards();
