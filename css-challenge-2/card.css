@@ -1,68 +1,77 @@
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    background-color: rgb(221, 177, 64);
-    border: solid 1px;
-    margin: 0.5vw;
-    padding: 0.5vw;
-    font-size: 1vw;
-  }
-  
-  .cardTitle{
-      display: inherit;
-      justify-content: space-between;
-      align-items: center;
-      border: solid 1px;
-      padding-inline: 2px;
-  }
-  
-  
-  .titleSymbol {
-      max-width: 1.5vw;
-  }
-  
-  
-  .cardStars {
-      display: inherit;
-      justify-content: flex-end;
-  }
-  
-  .star{
-      border-radius: 100%;
-      max-width: 1vw;
-      margin:0.1vw;
-      -webkit-border-radius: 100%;
-      -moz-border-radius: 100%;
-      -ms-border-radius: 100%;
-      -o-border-radius: 100%;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-content: stretch;
+  background-color: rgb(221, 177, 64);
+  border: solid 1px;
+  margin: 0.5vw;
+  padding: 0.5vw;
+  font-size: 1vw;
 }
-  
-  .cardImage {
-    display: inherit;
-    justify-content: center;
-    max-width: 300px;
-    width: 100%;
-  }
-  
-  .cardInfo {
-    background-color: rgb(220, 187, 105);
-    padding-inline: 0.5vw;
-    border-style: solid;
-    border-color: rgb(135, 104, 26);
-  }
-  
-  .cardType {
-    font-weight: bold;
-  }
-  
-  .cardNumbers {
-      border-top: solid 3px;
-      flex-direction: row;
-      justify-content: flex-end;
-      flex-wrap: nowrap;
-  }
-  
-  .cardNumbers p {
-      margin-left: 0.5vw;
-  }
+
+.cardTitle {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px;
+  padding-inline: 2px;
+}
+
+.cardTitleText {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.titleSymbol {
+  max-width: 1.2vw;
+}
+
+.cardStars {
+  display: inherit;
+  justify-content: flex-end;
+}
+
+.star {
+  border-radius: 100%;
+  max-width: 1vw;
+  margin: 0.1vw;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.cardImage {
+  /* max-width: 150px;
+    width: 100%; */
+
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.cardInfo {
+  background-color: rgb(220, 187, 105);
+  padding-inline: 0.5vw;
+  border-style: solid;
+  border-color: rgb(135, 104, 26);
+}
+
+.cardType {
+  font-weight: bold;
+}
+
+.cardNumbers {
+  display: flex;
+  border-top: solid 3px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.cardNumbers p {
+  margin-left: 0.5vw;
+  font-size: 0.6vw;
+}

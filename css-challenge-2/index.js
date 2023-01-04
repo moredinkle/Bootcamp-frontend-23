@@ -4,40 +4,40 @@ const data = [
         stars: 8,
         src: './images/ra.PNG',
         description: 'Mucho texto',
-        atk: 'ATK / 1000',
-        def: 'DEF / 1000'
+        atk: 'ATK/1000',
+        def: 'DEF/1000'
     },
     {
         title: 'Imitador',
         stars: 5,
         src: './images/imitador.PNG',
         description: 'Mucho texto',
-        atk: 'ATK / 1000',
-        def: 'DEF / 1000'
+        atk: 'ATK/1000',
+        def: 'DEF/1000'
     },
     {
         title: 'Mercader mágico',
         stars: 3,
         src: './images/mercader.PNG',
         description: 'Mucho texto',
-        atk: 'ATK / 1000',
-        def: 'DEF / 1000'
+        atk: 'ATK/1000',
+        def: 'DEF/1000'
     },
     {
         title: 'Mago oscuro del caos',
         stars: 6,
         src: './images/mago.PNG',
         description: 'Mucho texto',
-        atk: 'ATK / 1000',
-        def: 'DEF / 1000'
+        atk: 'ATK/1000',
+        def: 'DEF/1000'
     },
     {
         title: 'Gaia, el caballero feroz',
         stars: 10,
         src: './images/gaia.PNG',
         description: 'Mucho texto',
-        atk: 'ATK / 1000',
-        def: 'DEF / 1000'
+        atk: 'ATK/1000',
+        def: 'DEF/1000'
     },
 ];
 
@@ -58,7 +58,9 @@ function addCard(cardData) {
   <div class="card-zone">
     <div class="card">
       <div class="cardTitle">
-        <h3>${title}</h3>
+        <div class="cardTitleText">
+          <h3>${title}</h3>
+        </div>
         <img class="titleSymbol" src="./images/Field.png" alt="title symbol">
       </div>
       <div class="cardStars"> ${starsHTML} </div>
@@ -67,8 +69,7 @@ function addCard(cardData) {
         <h3>[ Tipo ]</h3>
         <p>${description}</p>
         <div class="cardNumbers">
-          <p>${atk}</p>
-          <p>${def}</p>
+          <p>${atk} ${def}</p>
         </div>
       </div>
     </div>
