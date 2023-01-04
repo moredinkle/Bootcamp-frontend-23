@@ -55,7 +55,6 @@ function addCard(cardData) {
   const { title, stars, src, description, atk, def } = cardData;
   const starsHTML = displayStars(stars);
   const card = `
-  <div class="card-zone">
     <div class="card">
       <div class="cardTitle">
         <div class="cardTitleText">
@@ -66,14 +65,13 @@ function addCard(cardData) {
       <div class="cardStars"> ${starsHTML} </div>
       <img class="cardImage" src="${src}"  />
       <div class="cardInfo">
-        <h3>[ Tipo ]</h3>
+        <p class="cardType">[ Tipo ]</p>
         <p>${description}</p>
         <div class="cardNumbers">
           <p>${atk} ${def}</p>
         </div>
       </div>
     </div>
-  </div>
   `;
   return card;
 }
