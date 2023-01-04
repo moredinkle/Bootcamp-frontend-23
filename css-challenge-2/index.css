@@ -1,5 +1,6 @@
 .board-container {
   display: grid;
+  justify-content: center;
   grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
   grid-template-rows: auto;
   max-height: 700px;
@@ -38,12 +39,9 @@
   gap: 4px 8px;
 }
 
-/* .card {
-  border: solid 2px;
+.card-zone {
   min-height: 70px;
-  max-width: 50px;
-  background-color: rgb(27, 27, 103);
-} */
+} 
 
 .card-image {
   /* max-width: 50px; */

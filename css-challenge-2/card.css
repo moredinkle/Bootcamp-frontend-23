@@ -2,40 +2,44 @@
     display: flex;
     flex-direction: column;
     justify-content: stretch;
-    gap: 5px 0px;
     background-color: rgb(221, 177, 64);
     border: solid 1px;
-    margin: 1em;
-    padding: 1em;
+    margin: 0.5vw;
+    padding: 0.5vw;
+    font-size: 1vw;
   }
   
   .cardTitle{
-      display: flex;
-      justify-content: stretch;
+      display: inherit;
+      justify-content: space-between;
       align-items: center;
       border: solid 1px;
-      padding-inline: 5px;
+      padding-inline: 2px;
   }
   
   
   .titleSymbol {
-      max-width: 20px;
+      max-width: 1.5vw;
   }
   
   
   .cardStars {
-      display: flex;
+      display: inherit;
       justify-content: flex-end;
   }
   
   .star{
-      border-radius: 50%;
-      max-width: 20px;
-      margin:3px;
-  }
+      border-radius: 100%;
+      max-width: 1vw;
+      margin:0.1vw;
+      -webkit-border-radius: 100%;
+      -moz-border-radius: 100%;
+      -ms-border-radius: 100%;
+      -o-border-radius: 100%;
+}
   
   .cardImage {
-    display: flex;
+    display: inherit;
     justify-content: center;
     max-width: 300px;
     width: 100%;
@@ -43,7 +47,7 @@
   
   .cardInfo {
     background-color: rgb(220, 187, 105);
-    padding-inline: 1em;
+    padding-inline: 0.5vw;
     border-style: solid;
     border-color: rgb(135, 104, 26);
   }
@@ -53,12 +57,12 @@
   }
   
   .cardNumbers {
-      display: flex;
       border-top: solid 3px;
       flex-direction: row;
       justify-content: flex-end;
+      flex-wrap: nowrap;
   }
   
   .cardNumbers p {
-      margin-left: 10px;
+      margin-left: 0.5vw;
   }

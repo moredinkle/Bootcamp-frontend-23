@@ -55,19 +55,21 @@ function addCard(cardData) {
   const { title, stars, src, description, atk, def } = cardData;
   const starsHTML = displayStars(stars);
   const card = `
-  <div class="card">
-    <div class="cardTitle">
-      <h2>${title}</h2>
-      <img class="titleSymbol" src="./images/Field.png" alt="title symbol">
-    </div>
-    <div class="cardStars"> ${starsHTML} </div>
-    <img class="cardImage" src="${src}"  />
-    <div class="cardInfo">
-      <h3>[ Tipo ]</h3>
-      <p>${description}</p>
-      <div class="cardNumbers">
-        <p>${atk}</p>
-        <p>${def}</p>
+  <div class="card-zone">
+    <div class="card">
+      <div class="cardTitle">
+        <h3>${title}</h3>
+        <img class="titleSymbol" src="./images/Field.png" alt="title symbol">
+      </div>
+      <div class="cardStars"> ${starsHTML} </div>
+      <img class="cardImage" src="${src}"  />
+      <div class="cardInfo">
+        <h3>[ Tipo ]</h3>
+        <p>${description}</p>
+        <div class="cardNumbers">
+          <p>${atk}</p>
+          <p>${def}</p>
+        </div>
       </div>
     </div>
   </div>
