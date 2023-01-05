@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+  }
+
+header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 1em;
+  background-color: rgba(12, 24, 102, 0.9);
+}
+
+body {
+    background-color: rgba(3, 7, 27, 0.9);
+}
+
+.logo {
+  font-weight: bold;
+  color: rgb(204, 183, 18);
+}
+
+.logo:hover {
+  color: rgb(128, 115, 14);
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: rgba(12, 24, 102, 0.9);
+  color: rgb(204, 183, 18);
+}

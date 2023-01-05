@@ -1,6 +1,7 @@
 .board-container {
   display: grid;
   grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+  margin-block: 2em;
 }
 
 .out-card-left {
