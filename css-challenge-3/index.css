@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+  border-radius: 100%;
+  max-height: 30px;
+  max-width: 30px;
+}
+
+form {
+    display: inherit;
+    align-items: center;
+    gap: 10px 10px;
+}
+
+.short-text {
+    display: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .short-text { display: inline; }
+    .full-text { display: none; }
+}
+
+@media (max-width: 400px) {
+    .short-text { display: none; }
+    .full-text { display: none; }
+}
