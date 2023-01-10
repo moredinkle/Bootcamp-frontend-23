@@ -1,0 +1,98 @@
+#colors() {
+  primary: rgb(221, 177, 64);
+  secondary: rgb(220, 187, 105);
+  secondary-border: rgb(135, 104, 26);
+}
+
+@regular-border: solid 1px;
+@regular-width: 1vw;
+@text-size: 0.8vw;
+
+.card-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.round-image{
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+
+.card {
+  .card-flex();
+  background-color: #colors[primary];
+  border: @regular-border;
+  margin: 0.5 * @regular-width;
+  padding: 0.5 * @regular-width;
+  font-size: @text-size;
+}
+
+.cardTitle {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  border: @regular-border;
+  padding-inline: 2px;
+}
+
+.cardTitleText {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.titleSymbol {
+  max-width: 1.2vw;
+}
+
+.cardStars {
+  .justify-end();
+}
+
+.star {
+  min-width: 0.3vw;
+  max-width: 0.8vw;
+  margin: 0.1vw;
+  .round-image();
+}
+
+.cardImage {
+  width: 100%;
+}
+
+.cardInfo {
+  background-color: #colors[secondary];
+  padding-inline: 0.2vw;
+  border-style: solid;
+  font-size: 0.8 * @text-size;
+  border-color: #colors[secondary-border];
+}
+
+.cardInfo p {
+  margin-block: 0.2vw;
+}
+
+.cardType {
+  font-weight: bold;
+}
+
+.cardNumbers {
+  .justify-end();
+  border-top: @regular-border;
+}
+
+.cardNumbers p {
+  margin-left: 0.5vw;
+  font-size: 0.6 * @text-size;
+}

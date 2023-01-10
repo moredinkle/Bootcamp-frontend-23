@@ -1,0 +1,64 @@
+@full-board-columns: 1fr 1fr 5fr 1fr 1fr;
+@main-board-only: 1fr;
+@out-card-position: 3;
+@default-margin: 2vw;
+
+.board-container {
+  display: grid;
+  margin-block: @default-margin;
+  grid-template-columns: @full-board-columns;
+}
+
+.out-card-left {
+  display: inherit;
+  grid-row-start: @out-card-position;
+}
+
+.out-card-right {
+  display: inherit;
+  grid-row-start: @out-card-position + 1;
+}
+
+.vertical-line {
+  display: inherit;
+  align-items: center;
+  grid-template-columns: 90%;
+  grid-template-rows: 16% 16% 16% 16% 16% 16%;
+  gap: 3px;
+}
+
+.main-board{
+  display: inherit;
+  align-content: space-between;
+}
+
+.deck {
+  display: inherit;
+  margin: @default-margin;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+
+.card-image {
+  width: 100%;
+}
+
+.symbol-card {
+  display: flex;
+  padding: 1px;
+  border: solid 1px;
+  align-content: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+
+@media (max-width: 400px) {
+  .vertical-line { display: none; }
+  .out-card-left { display: none; }
+  .out-card-right { display: none; }
+  .board-container {
+    grid-template-columns: @main-board-only;
+    margin-block: 0;
+  }
+}

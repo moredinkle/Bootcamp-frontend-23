@@ -1,0 +1,81 @@
+.card-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.round-image {
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  background-color: #ddb140;
+  border: solid 1px;
+  margin: 0.5vw;
+  padding: 0.5vw;
+  font-size: 0.8vw;
+}
+.cardTitle {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px;
+  padding-inline: 2px;
+}
+.cardTitleText {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.titleSymbol {
+  max-width: 1.2vw;
+}
+.cardStars {
+  display: flex;
+  justify-content: flex-end;
+}
+.star {
+  min-width: 0.3vw;
+  max-width: 0.8vw;
+  margin: 0.1vw;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+.cardImage {
+  width: 100%;
+}
+.cardInfo {
+  background-color: #dcbb69;
+  padding-inline: 0.2vw;
+  border-style: solid;
+  font-size: 0.64vw;
+  border-color: #87681a;
+}
+.cardInfo p {
+  margin-block: 0.2vw;
+}
+.cardType {
+  font-weight: bold;
+}
+.cardNumbers {
+  display: flex;
+  justify-content: flex-end;
+  border-top: solid 1px;
+}
+.cardNumbers p {
+  margin-left: 0.5vw;
+  font-size: 0.48vw;
+}
