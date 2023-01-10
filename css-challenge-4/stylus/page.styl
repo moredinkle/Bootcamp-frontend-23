@@ -1,0 +1,46 @@
+primary-color = rgba(12, 24, 102, 0.9)
+secondary-color = rgb(204, 183, 18)
+secondary-hover-color = rgb(128, 115, 14)
+background-color = rgba(3, 7, 27, 0.9)
+header-footer-padding = 5px
+header-footer-text-size = 2vw
+
+custom-flex(justify_value, align_value)
+  display: flex
+  justify-content: justify_value
+  align-items: align_value
+
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  font-family: Arial
+
+
+header
+  custom-flex(start, center)
+  padding: header-footer-padding
+  background-color: primary-color
+  font-size: header-footer-text-size
+
+
+body
+  background-color: background-color
+
+
+.logo
+  font-weight: bold
+  color: secondary-color
+  &:hover
+    color: secondary-hover-color
+
+
+footer
+  custom-flex(space-between, center)
+  flex-direction: row
+  padding: header-footer-padding
+  background-color: primary-color
+  font-size: header-footer-text-size
+  color: secondary-color
+

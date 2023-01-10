@@ -1,0 +1,55 @@
+.board-container {
+  display: grid;
+  margin: 1em;
+  grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+}
+.out-card-left {
+  display: inherit;
+  grid-row-start: 3;
+}
+.out-card-right {
+  display: inherit;
+  grid-row-start: 4;
+}
+.vertical-line {
+  display: inherit;
+  align-items: center;
+  grid-template-columns: repeat(1, 100%);
+  grid-template-rows: repeat(6, 16.666666666666664%);
+  gap: 3px;
+}
+.main-board {
+  display: inherit;
+  align-content: space-between;
+}
+.deck {
+  display: inherit;
+  margin: 2vw;
+  grid-template-columns: repeat(5, 20%);
+}
+.card-image {
+  width: 100%;
+}
+.symbol-card {
+  display: flex;
+  padding: 1px;
+  border: solid 1px;
+  align-content: center;
+  justify-content: center;
+  min-height: 70px;
+}
+@media (max-width: 400px) {
+  .vertical-line {
+    display: none;
+  }
+  .out-card-left {
+    display: none;
+  }
+  .out-card-right {
+    display: none;
+  }
+  .board-container {
+    grid-template-columns: 1fr;
+    margin-block: 0;
+  }
+}
