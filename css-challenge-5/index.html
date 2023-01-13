@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <form>
+                    <div class="form-group row">
+                        <div class="col-sm-1">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="d-inline" for="gameTitle">Game title</label>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control my-1" id="gameTitle" aria-describedby="emailHelp"
+                                placeholder="Game title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <i class="bi bi-pencil-fill"></i>
+                        <label for="gameReview">Review</label>
+                        <textarea class="form-control my-1" id="gameReview" rows="3"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-1">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="gameRating">Rating</label>
+                        </div>
+                        <div class="col-md-8">
+                            <select id="gameRating" class="form-control my-1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary my-2">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm">
+                Here help
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
