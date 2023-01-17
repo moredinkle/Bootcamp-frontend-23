@@ -14,33 +14,32 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm my-2">
                 <form>
                     <div class="form-group row">
-                        <div class="col-sm-1">
+                        <div class="col-xs-6 col-xl-3">
                             <i class="bi bi-person-circle"></i>
-                        </div>
-                        <div class="col-sm-4">
                             <label class="d-inline" for="gameTitle">Game title</label>
                         </div>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control my-1" id="gameTitle" aria-describedby="emailHelp"
-                                placeholder="Game title">
+                        <div class="col-sm-12 col-xl-9">
+                            <input type="text" class="form-control my-1" id="gameTitle">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <i class="bi bi-pencil-fill"></i>
-                        <label for="gameReview">Review</label>
-                        <textarea class="form-control my-1" id="gameReview" rows="3"></textarea>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-1">
-                            <i class="bi bi-star-fill"></i>
+                        <div class="col-xs-6 col-xl-3">
+                            <i class="bi bi-pencil-fill"></i>
+                            <label for="gameReview">Review</label>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-12 col-xl-9">
+                            <textarea class="form-control my-1" id="gameReview" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row align-middle">
+                        <div class="col-xs-6 col-xl-3">
+                            <i class="bi bi-star-fill"></i>
                             <label for="gameRating">Rating</label>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-sm-12 col-xl-9">
                             <select id="gameRating" class="form-control my-1">
                                 <option>1</option>
                                 <option>2</option>
@@ -53,8 +52,24 @@
                     <button type="submit" class="btn btn-primary my-2">Submit</button>
                 </form>
             </div>
-            <div class="col-sm">
-                Here help
+            <div class="d-none d-sm-block col-sm d-flex flex-column border my-2">
+                <div class="px-2 mb-lg-4 mb-xl-0">Name of the game</div>
+                <div class="px-2 my-sm-5 my-lg-4 mt-xl-3">What did you think about the game? Write a short review</div>
+                <div class="px-2 mt-sm-5 mt-lg-5 pt-lg-3">Rate the game from 1 to 5</div>
+            </div>
+            <div class="mx-2 d-block d-sm-none border">
+                <div>
+                    <p class="fw-bold d-inline-block">GAME TITLE:</p>
+                    <p class="d-inline-block">Name of the game</p>
+                </div>
+                <div>
+                    <p class="fw-bold d-inline-block">REVIEW:</p>
+                    <p class="d-inline-block">Write a short review about the game</p>
+                </div>
+                <div>
+                    <p class="fw-bold d-inline-block">RATING:</p>
+                    <p class="d-inline-block">Rate the game from 1 to 5</p>
+                </div>
             </div>
         </div>
     </div>
