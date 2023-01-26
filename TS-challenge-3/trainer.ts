@@ -1,6 +1,9 @@
+import { Pokemon } from "./pokemon";
+
 function getPokemonsId(constructor: Function) {
     constructor.prototype.randomIds = [];
-    for (let i = 0; i < 10; i++) {
+    constructor.prototype.pokemons = [];
+    for (let i = 0; i < 3; i++) {
     let randomId = Math.floor(Math.random() * 25);
     constructor.prototype.randomIds.push(randomId);
   }
@@ -9,22 +12,31 @@ function getPokemonsId(constructor: Function) {
 @getPokemonsId
 export class Trainer {
   name: string;
-  pokemons: Object[];
+  pokemons: Pokemon[];
+  randomIds: number[];
 
   constructor(name: string) {
     this.name = name;
   }
 
-  getPokemons() {
-    const pokemonId = '';
-    const endpoint = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
-    // this.randomIds.map((id) => {
-
-    // });
+  async getPokemons() {
+    const endpoint = `https://pokeapi.co/api/v2/pokemon/`;
+    
+    const poke = await Promise.all(this.randomIds.map(async (id) => {
+        const body = await fetch(endpoint+id).then(res => res.json());
+        const pokemon = new Pokemon(body.id, body.name, body.base_experience, body.weight);
+        return pokemon;
+    }));
+    this.pokemons = poke;
+    console.log(this.pokemons);
   }
+
 }
 
+
 const ash = new Trainer('ash');
-console.log(ash.randomIds);
+ash.getPokemons();
+console.log(ash);
+
 
 
