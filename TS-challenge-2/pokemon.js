@@ -6,19 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 function checkPowerPoint() {
     return function (target, propertyKey, descriptor) {
-        console.log(target.constructor);
         var childFunction = descriptor.value;
         descriptor.value = function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
                 args[_i] = arguments[_i];
             }
-            var powerPoints = args[0];
-            if (powerPoints > 0) {
+            if (this.ppAvailable > 0) {
                 return childFunction.apply(this, args);
             }
             else {
-                return;
+                console.log("".concat(this.name, " has no power points left to attack :("));
             }
         };
     };
@@ -40,5 +38,6 @@ var Pokemon = /** @class */ (function () {
 }());
 var move = { name: 'thunderbolt', power: 90 };
 var pikachu = new Pokemon('pikachu', 1);
+pikachu.figth(move);
 pikachu.figth(move);
 pikachu.figth(move);

@@ -1,14 +1,13 @@
-function checkPowerPoint(): any{
+function checkPowerPoint(): Function{
   return function (target: Object, propertyKey: string | symbol, descriptor: PropertyDescriptor) {
-    console.log(target.constructor.prototype);
   const childFunction = descriptor.value;
+  
   descriptor.value = function (...args: any[]){
-    const powerPoints = args[0] as number;
-    if(powerPoints > 0) {
+    if(this.ppAvailable > 0) {
       return childFunction.apply(this, args);
     }
     else {
-      return;
+      console.log(`${this.name} has no power points left to attack :(`);
     }
   }
   };
@@ -24,7 +23,7 @@ class Pokemon {
     }
 
     @checkPowerPoint()
-    figth(move: any) {
+    figth(move: {name: string, power: number}) {
       console.log(`${this.name} used ${move?.name}!`);
       this.ppAvailable -= 1;
     }
@@ -32,5 +31,6 @@ class Pokemon {
 
   const move = {name: 'thunderbolt', power: 90};
   const pikachu = new Pokemon('pikachu', 1);
+  pikachu.figth(move);
   pikachu.figth(move);
   pikachu.figth(move);
