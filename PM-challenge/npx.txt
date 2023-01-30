@@ -1,0 +1,12 @@
+NPX: Node Package Execute.
+Se utiliza para ejecutar paquetes.
+Preinstalado desde la versión 5.2.0 de npm.
+npm package runner que ejecuta cualquier paquete del registro npm
+sin necesidad de instalarlo.
+Los paquetes no son instalados globalmente.
+Es útil para utilizar paquetes una sola vez.
+Para ejecutar paquetes utilizar
+    npx your-package-name
+También puede ejecutar código directamente desde GitHub.
+Con npx se puede utilizar directamente create-react-app, sin necesidad
+de instalarlo.
