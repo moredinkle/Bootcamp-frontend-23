@@ -1,0 +1,18 @@
+Probando vi que webpack-dev-server funciona sin configuración adicional,
+solo con:
+devServer: {
+}
+
+Anteriormente estaba usando static, hot y devtool.
+
+static: sirve para servir contenido estático como imágenes u otros que sean necesarios.
+Algunos ejemplos utilizan directory, otros contentBase.
+
+hot: sirve para habilitar el hot module replacement de webpack.
+Hot Module Replacement (HMR) cambia, añade o quita modulos mientras la
+aplicación corre, sin recargarla completamente. Es muy útil para acelerar el
+desarrollo.
+
+devtool: Sirve para elegir un estado de source mapping y mejorar el proceso
+de debugging. Permiten recibir los errores donde están en el código fuente
+y no en el código procesado por webpack.
