@@ -1,0 +1,7 @@
+<h2 class="text-3xl underline">Hello pokedex</h2>
+<h2 [ngStyle]="{'color':'green'}">Hello in green</h2>
+<h2 [ngStyle]="{'color': bgColor }">Hello in another color</h2>
+<h3 [ngStyle]="{'background-color': state ? 'red' : 'blue', 'color': 'white'}">Hello in another color</h3>
+<div [ngStyle]="{'font-size.px': getSize()}"> Tamaño cambia </div>
+<p [style.color]="bgColor" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, nemo unde, commodi asperiores natus delectus, odit numquam laudantium harum officia quisquam quasi dolores autem fugiat eligendi fugit! Quasi, fugit excepturi!</p>
+<button (click)="state = !state" class="bg-red-900 text-emerald-50 gont-bold">Click me</button>
