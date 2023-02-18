@@ -1,0 +1,13 @@
+<ul class="grid grid-cols-3 grid-flow-row py-4 px-8 lg:px-36 items-stretch">
+  <li *ngFor="let pokemon of displayPokemons; let i = index" class="m-3">
+    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+  </li>
+</ul>
+<div class="flex justify-center pb-4">
+  <button
+    class="rounded-lg px-5 text-2xl bg-slate-700 text-white font-bold"
+    (click)="nextPokemons()"
+  >
+    Next 21
+  </button>
+</div>
