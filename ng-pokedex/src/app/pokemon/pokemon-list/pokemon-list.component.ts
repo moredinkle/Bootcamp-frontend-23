@@ -51,7 +51,6 @@ export class PokemonListComponent {
       this.getPokemonData(pokeurl.url);
     }
     this.sortPokemons();
-    this.displayPokemons = this.pokemons;
   }
 
   sortPokemons() {
@@ -63,6 +62,7 @@ export class PokemonListComponent {
       sortedArray = this.pokemons.sort((a, b) => a.name.localeCompare(b.name));
     }
     this.pokemons = sortedArray;
+    this.displayPokemons = this.pokemons;
   }
 
   getPokemonData(pokemonUrl: string) {

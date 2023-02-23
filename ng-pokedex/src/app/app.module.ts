@@ -9,13 +9,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './core/search-bar/search-bar.component';
 import { CommonModule } from '@angular/common';
 import { PokemonCardComponent } from './pokemon/pokemon-card/pokemon-card.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 @NgModule({
     declarations: [
         AppComponent,
         PokemonListComponent,
         PokemonCardComponent,
         NavbarComponent,
-        SearchBarComponent
+        SearchBarComponent,
+        NotFoundComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

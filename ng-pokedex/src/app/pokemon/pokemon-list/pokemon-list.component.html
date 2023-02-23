@@ -1,26 +1,43 @@
-<div class="container flex flex-col gap-2 bg-red-500 justify-center py-12 px-24 lg:px-64 w-screen">
-  <app-search-bar placeholder="What pokemon are you looking for?" (searchEvent)="searchPokemon($event)"></app-search-bar>
+<div
+  class="flex flex-col gap-2 bg-red-500 justify-center py-12 px-12 md:px-24 lg:px-64 w-screen"
+>
+  <app-search-bar
+    placeholder="What pokemon are you looking for?"
+    (searchEvent)="searchPokemon($event)"
+  ></app-search-bar>
   <div class="flex flex-row justify-center">
-    <span class="font-mono text-white text-sm">Search by Pokemon name or pokedex number</span>
+    <span class="font-mono text-white text-sm"
+      >Search by Pokemon name or pokedex number</span
+    >
   </div>
 </div>
 
 <div class="flex gap-4 px-8 lg:px-40 pt-4">
   <span class="text-2xl font-bold">Order by</span>
-  <button [class]="orderByIdClass" (click)="changeOrderSelectValue('id')">ID</button>
-  <button [class]="orderByNameClass" (click)="changeOrderSelectValue('name')">Name</button>
-</div>
-
-<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row py-4 px-8 lg:px-36 items-stretch">
-  <li *ngFor="let pokemon of displayPokemons; let i = index" class="m-3">
-    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
-  </li>
-</ul>
-<div class="flex justify-center pb-4">
-  <button
-    class="rounded-lg px-5 text-2xl bg-slate-700 text-white font-bold"
-    (click)="nextPokemons()"
-  >
-    Next 21
+  <button [class]="orderByIdClass" (click)="changeOrderSelectValue('id')">
+    ID
+  </button>
+  <button [class]="orderByNameClass" (click)="changeOrderSelectValue('name')">
+    Name
   </button>
 </div>
+
+<div *ngIf="displayPokemons.length > 0; else notFoundTemplate">
+  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row py-4 px-8 lg:px-36 items-stretch">
+    <li *ngFor="let pokemon of displayPokemons; let i = index" class="m-3">
+      <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+    </li>
+  </ul>
+
+  <div class="flex justify-center pb-4">
+    <button class="rounded-lg px-5 text-2xl bg-slate-700 text-white font-bold"
+      (click)="nextPokemons()"
+    >
+      Next 21
+    </button>
+  </div>
+</div>
+
+<ng-template #notFoundTemplate>
+  <app-not-found notFoundText="Pokemon not found :("></app-not-found>
+</ng-template>
