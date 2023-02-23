@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PokemonListComponent } from './pokemon/pokemon-list/pokemon-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SearchSectionComponent } from './search/search-section/search-section.component';
-import { SearchBarComponent } from './search/search-bar/search-bar.component';
+import { SearchBarComponent } from './core/search-bar/search-bar.component';
 import { CommonModule } from '@angular/common';
 import { PokemonCardComponent } from './pokemon/pokemon-card/pokemon-card.component';
 @NgModule({
@@ -15,7 +15,6 @@ import { PokemonCardComponent } from './pokemon/pokemon-card/pokemon-card.compon
         PokemonListComponent,
         PokemonCardComponent,
         NavbarComponent,
-        SearchSectionComponent,
         SearchBarComponent
     ],
     providers: [],
@@ -23,7 +22,8 @@ import { PokemonCardComponent } from './pokemon/pokemon-card/pokemon-card.compon
     imports: [
         BrowserModule,
         HttpClientModule,
-        CommonModule
+        CommonModule,
+        FormsModule
     ]
 })
 export class AppModule { }

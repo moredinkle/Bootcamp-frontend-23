@@ -10,6 +10,7 @@ import { PokemonForCard, PokemonUrl } from '../../utils/types';
 })
 export class PokemonListComponent {
   pokemonUrls: PokemonUrl[] = [];
+  pokemons: PokemonForCard[] = [];
   displayPokemons: PokemonForCard[] = [];
   limit = 21;
   offset = 0;
@@ -20,6 +21,7 @@ export class PokemonListComponent {
   orderByIdClass = `${this.defaultButtonClass} ${this.selectedOrderClass}`;
   orderByNameClass = `${this.defaultButtonClass} ${this.otherOrderClass}`;
   orderByValue: "id" | "name" = "id";
+
   constructor(private pokemonService: PokemonListService) {}
 
   ngOnInit() {
@@ -48,23 +50,25 @@ export class PokemonListComponent {
       const pokeurl = this.pokemonUrls[i];
       this.getPokemonData(pokeurl.url);
     }
+    this.sortPokemons();
+    this.displayPokemons = this.pokemons;
   }
 
   sortPokemons() {
     let sortedArray = [];
     if(this.orderByValue === "id"){
-      sortedArray = this.displayPokemons.sort((a, b) => a.id - b.id);
+      sortedArray = this.pokemons.sort((a, b) => a.id - b.id);
     }
     else {
-      sortedArray = this.displayPokemons.sort((a, b) => a.name.localeCompare(b.name));
+      sortedArray = this.pokemons.sort((a, b) => a.name.localeCompare(b.name));
     }
-    this.displayPokemons = sortedArray;
+    this.pokemons = sortedArray;
   }
 
   getPokemonData(pokemonUrl: string) {
     this.pokemonService.getPokemon(pokemonUrl).subscribe((pokemon: any) => {
       const poke = toPokemonCard(pokemon);
-      return this.displayPokemons.push(poke);
+      return this.pokemons.push(poke);
     });
   }
 
@@ -72,5 +76,13 @@ export class PokemonListComponent {
     this.offset += this.jump;
     this.limit += this.jump;
     this.loadPokemons();
+  }
+
+  searchPokemon(searchTerm: string){
+    let aux = this.pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm));
+    if(aux.length === 0) {
+      aux = this.pokemons.filter(pokemon => pokemon.displayId.includes(searchTerm));
+    }
+    this.displayPokemons = aux;
   }
 }
