@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import {  PokemonUrl } from '../utils/types';
+import {  GenerationInfo, GenerationUrl, PokemonUrl } from '../utils/types';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +18,12 @@ export class PokemonListService {
   getPokemon(pokemonUrl: string){
     return this.http.get(pokemonUrl);
   }
-}
+
+  getGenerations(){
+    return this.http.get(`${this.apiUrl}generation`) as Observable<{results: GenerationUrl[]}>;
+  }
+
+  getGenerationData(generationUrl: string) {
+    return this.http.get(generationUrl);
+  }
+}//TODO continuar con generations
