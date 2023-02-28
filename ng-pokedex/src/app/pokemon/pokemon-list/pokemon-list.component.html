@@ -28,7 +28,7 @@
     <app-select
       label="Generation"
       [options]="selectGenerationOptions"
-      [selectedOption]="selectedGeneration"
+      [selectedOption]="selectedGeneration.name"
       (selectChange)="selectGeneration($event)"
     ></app-select>
   </div>
@@ -47,9 +47,8 @@
     <button
       class="rounded-lg px-5 text-2xl bg-slate-700 text-white font-bold"
       (click)="nextPokemons()"
-      *ngIf="!filtering"
     >
-      Next 21
+      Next {{jump}}
     </button>
   </div>
 </div>

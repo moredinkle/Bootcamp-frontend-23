@@ -1,5 +1,5 @@
 import { pokemonTypeColorMap } from './colors';
-import { PokemonForCard, GenerationInfo } from './types';
+import { PokemonForCard, GenerationInfo, PokemonUrl } from './types';
 
 export function toPokemonCard(pokemon: any): PokemonForCard{
   let poke: PokemonForCard = {
@@ -16,9 +16,19 @@ export function toGeneration(gen: any): GenerationInfo {
   const generation: GenerationInfo = {
     id: gen.id,
     name: gen.name,
-    pokemon_species: gen.pokemon_species
+    pokemon_species: gen.pokemon_species.map((specie: any) => {return specieToPokemonUrl(specie)})
   }
   return generation;
+}
+
+export function specieToPokemonUrl(specie: any): PokemonUrl {
+  const id = specie.url.split('/')[6];
+  const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+  const poke = {
+    name: specie.name,
+    url
+  }
+  return poke;
 }
 
 export function capitalizeFirstLetter(string: string) {
