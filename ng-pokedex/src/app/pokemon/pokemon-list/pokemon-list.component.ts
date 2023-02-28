@@ -76,7 +76,6 @@ export class PokemonListComponent {
   }
 
   sortPokemons() {
-    console.log(this.filtering);
     if (this.orderByValue === 'id') {
       this.displayPokemons = this.displayPokemons.sort((a, b) => a.id - b.id);
     } else {
@@ -121,19 +120,6 @@ export class PokemonListComponent {
     }
     this.displayPokemons = aux;
   }
-
-
-  // generationSpeciesToCards(gen: GenerationInfo) {
-  //   gen.pokemon_species.map((specie: { name: string; url: string }) => {
-  //     const id = specie.url.split('/')[6];
-  //     this.pokemonService
-  //       .getPokemon(`${this.apiurl}pokemon/${id}`)
-  //       .subscribe((poke) => {
-  //         const pokemon = toPokemonCard(poke);
-  //         this.generationPokemons.push(pokemon);
-  //       });
-  //   });
-  // }
 
   selectGeneration(generationName: string) {
     if(generationName === this.selectedGeneration.name) {
