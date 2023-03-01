@@ -8,7 +8,10 @@ const routes: Routes = [
   {
     path: 'pokemons',
     component: PokemonListComponent,
-    children: [{ path: ':id', component: PokemonProfileComponent }],
+  },
+  {
+    path: 'profile/:id',
+    component: PokemonProfileComponent,
   },
 ];
 
