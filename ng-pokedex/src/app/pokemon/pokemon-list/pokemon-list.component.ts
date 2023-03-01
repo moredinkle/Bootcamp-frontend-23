@@ -47,7 +47,7 @@ export class PokemonListComponent {
   }
 
   goToProfile(id: number) {
-    this.router.navigate(['/profile',id]);
+    this.router.navigate(['/pokemons',id]);
   }
 
   getGenerations() {

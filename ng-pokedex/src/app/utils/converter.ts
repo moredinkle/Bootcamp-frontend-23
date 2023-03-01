@@ -1,5 +1,5 @@
 import { pokemonTypeColorMap } from './colors';
-import { PokemonForCard, GenerationInfo, PokemonUrl } from './types';
+import { PokemonForCard, GenerationInfo, PokemonUrl, PokemonProfile, PokemonStat } from './types';
 
 export function toPokemonCard(pokemon: any): PokemonForCard{
   let poke: PokemonForCard = {
@@ -29,6 +29,45 @@ export function specieToPokemonUrl(specie: any): PokemonUrl {
     url
   }
   return poke;
+}
+
+export function toPokemonProfile(data: any): PokemonProfile {
+  const pokemon: PokemonProfile = {
+    name: data.name,
+    id: data.id,
+    displayId: formatId(data.id),
+    weight: data.weight,
+    height: data.height,
+    types: getPokemonTypes(data.types),
+    images: getProfileImages(data.sprites),
+    stats: getPokemonStats(data.stats)
+  }
+  return pokemon;
+}
+
+function getProfileImages(sprites: any) {
+  const images:{url: string}[] = []
+  images.push(sprites.front_default);
+  images.push(sprites.front_shiny);
+  images.push(sprites.back_default);
+  images.push(sprites.back_shiny);
+  return images;
+}
+
+function getPokemonStats(stats: any) {
+  const newStats = stats.map((item: any) => {
+    return { base_stat: item.base_stat, effort: item.effort, name: item.stat.name }
+  });
+  return newStats;
+}
+
+function getPokemonTypes(types: any){
+  const newTypes:{name: string, color: string}[] = types.map((type: any) => {
+    return {
+      name: capitalizeFirstLetter(type.type.name), color: pokemonTypeColorMap[`${type.type.name}`]
+    }
+  })
+  return newTypes;
 }
 
 export function capitalizeFirstLetter(string: string) {
