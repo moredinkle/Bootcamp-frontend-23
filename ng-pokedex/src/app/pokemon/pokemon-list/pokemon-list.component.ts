@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { toGeneration, toPokemonCard } from 'src/app/utils/converter';
 import { PokemonListService } from '../../services/pokemon-list-service.service';
 import {
@@ -34,7 +35,7 @@ export class PokemonListComponent {
   orderByValue: 'id' | 'name' = 'id';
   filtering = false;
 
-  constructor(private pokemonService: PokemonListService) {}
+  constructor(private pokemonService: PokemonListService, private router: Router) {}
 
   ngOnInit() {
     this.pokemonService.getPokemonList().subscribe((pokemonListData: any) => {
@@ -43,6 +44,10 @@ export class PokemonListComponent {
     });
     this.displayPokemons = this.pokemons;
     this.getGenerations();
+  }
+
+  goToProfile(id: number) {
+    this.router.navigate(['/'+ id]);
   }
 
   getGenerations() {
