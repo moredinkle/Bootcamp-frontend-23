@@ -33,20 +33,23 @@ export function specieToPokemonUrl(specie: any): PokemonUrl {
 
 export function toPokemonProfile(data: any): PokemonProfile {
   const pokemon: PokemonProfile = {
-    name: data.name,
+    name: capitalizeFirstLetter(data.name),
     id: data.id,
     displayId: formatId(data.id),
     weight: data.weight,
     height: data.height,
     types: getPokemonTypes(data.types),
     images: getProfileImages(data.sprites),
+    selectedImage: {url: ''},
     stats: getPokemonStats(data.stats)
   }
+  pokemon.selectedImage = pokemon.images[0];
   return pokemon;
 }
 
 function getProfileImages(sprites: any) {
-  const images:{url: string}[] = []
+  const images:{url: string}[] = [];
+  images.push(sprites.other["official-artwork"].front_default);
   images.push(sprites.front_default);
   images.push(sprites.front_shiny);
   images.push(sprites.back_default);

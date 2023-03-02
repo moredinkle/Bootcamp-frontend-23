@@ -1,0 +1,9 @@
+<ul class="flex flex-row gap-1 pt-2 lg:pt-8">
+  <li
+    *ngFor="let type of types; let i = index"
+    [ngStyle]="{ 'background-color': modifyColor(type.color, 1.2) }"
+    class=" px-2 py-1 font-bold text-xs md:text-sm xl:text-md rounded-md text-white"
+  >
+    {{ type.name }}
+  </li>
+</ul>

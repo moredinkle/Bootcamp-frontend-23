@@ -30,6 +30,7 @@ export type PokemonProfile = {
   height: number;
   types: { name: string; color: string }[];
   images: { url: string }[];
+  selectedImage: { url: string };
   stats: PokemonStat[];
 };
 

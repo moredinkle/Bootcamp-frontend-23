@@ -2,15 +2,7 @@
   <div class="flex flex-col text-white justify-center">
     <span class="text-sm xl:text-lg font-bold">#{{ pokemon.displayId }}</span>
     <span class="xs:text-sm sm:text-lg xl:text-3xl font-extrabold">{{ pokemon.name }}</span>
-    <ul class="flex flex-row gap-1 pt-2 lg:pt-8">
-      <li
-        *ngFor="let type of pokemon.types; let i = index"
-        [ngStyle]="{ 'background-color': modifyColor(type.color, 1.2) }"
-        class=" px-1 py-0.5 font-bold text-[0.5rem] md:text-[0.6rem] xl:text-[0.9rem] rounded-md"
-      >
-        {{ type.name }}
-      </li>
-    </ul>
+    <app-pokemon-types [types]="pokemon.types"></app-pokemon-types>
   </div>
   <div class="items-stretch">
     <img [src]="pokemon.imageUri" class="object-scale-down"/>
