@@ -1,12 +1,46 @@
-<div class="flex justify-center items-center py-4 px-4 md:px-16 xl:px-32">
-  <div class="flex flex-col gap-4 w-full h-full">
-    <span class="text-2xl font-bold">#{{pokemon.displayId}}</span>
-    <span class="text-5xl font-extrabold">{{pokemon.name}}</span>
+<div class="flex justify-center w-screen">
+  <div class="flex flex-col gap-4 py-4 px-4 md:px-16 xl:px-32">
+    <mat-icon (click)="goBack()" class="scale-125 hover:scale-150 text-slate-500 hover:text-slate-700"
+      >arrow_back</mat-icon
+    >
+    <span class="text-2xl font-bold">#{{ pokemon.displayId }}</span>
+    <span class="text-5xl font-extrabold">{{ pokemon.name }}</span>
     <app-pokemon-types [types]="pokemon.types"></app-pokemon-types>
+
+    <ul class="flex gap-5">
+      <li *ngFor="let option of menuData">
+        {{ option }}
+      </li>
+    </ul>
+
+    <div
+      class="grid grid-cols-2 gap-x-2 gap-y-1 px-4 py-4 rounded-md border shadow-md"
+    >
+      <span class="font-bold">Height:</span>
+      <span class="">{{ pokemon.height }}</span>
+      <span class="font-bold">Weight:</span>
+      <span class="">{{ pokemon.weight }}</span>
+    </div>
   </div>
 
-  <div class="w-full h-full" [ngStyle]="{ 'background-color': pokemon.types[0].color }">
-    <img [src]="pokemon.selectedImage" alt="">
+  <div
+    class="flex flex-col justify-center p-4 rounded-lg"
+    [ngStyle]="{ 'background-color': modifyColor(pokemon.types[0].color, 0.85) }"
+  >
+  <div class="flex gap-2 items-center">
+    <mat-icon class="scale-150 text-slate-200 hover:text-white" (click)="previousPicture()">arrow_back_ios</mat-icon>
+    <img [src]="pokemon.selectedImage"  class="object-fill min-h-48 min-w-48"/>
+    <mat-icon class="scale-150 text-slate-200 hover:text-white" (click)="nextPicture()">arrow_forward_ios</mat-icon>
   </div>
-
+    <div class="flex gap-2">
+      <button [class]="defaultButtonStyle + 'bg-slate-100  hover:bg-slate-200'" (click)="goToProfile(pokemon.id-1)">
+        <mat-icon class="scale-75">arrow_back</mat-icon>
+        Previous #{{pokemon.id-1}}
+      </button>
+      <button [class]="defaultButtonStyle + 'bg-red-400 hover:bg-red-500 text-white'" (click)="goToProfile(pokemon.id+1)">
+        <mat-icon class="scale-75">arrow_forward</mat-icon>
+        Next #{{pokemon.id+1}}
+      </button>
+    </div>
+  </div>
 </div>
